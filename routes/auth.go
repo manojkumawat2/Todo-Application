@@ -2,9 +2,9 @@ package routes
 
 import (
 	"net/http"
-	"quiz/helpers"
-	"quiz/middlewares"
-	"quiz/models"
+	"todo/helpers"
+	"todo/middlewares"
+	"todo/models"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,4 +1,4 @@
-module quiz
+module todo
 
 go 1.19
 
