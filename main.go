@@ -2,8 +2,8 @@ package main
 
 import (
 	"net/http"
-	"quiz/middlewares"
-	"quiz/routes"
+	"todo/middlewares"
+	"todo/routes"
 
 	"github.com/gin-gonic/gin"
 )
