@@ -22,4 +22,19 @@ const User = sequelize.define('User', {
 User.hasMany(Task);
 Task.belongsTo(User);
 
+User.doesEmailAlreadyExist = async (email) => {
+    if (!email) {
+        return Promise.resolve(false);
+    }
+
+    const user = await User.findOne({
+        where: {
+            email: email
+        },
+        attributes: ['id']
+    });
+
+    return Promise.resolve(!!user);
+}
+
 module.exports = User;

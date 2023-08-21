@@ -6,6 +6,13 @@ module.exports.registerController = async (req, res) => {
     const { name, email, password } = req.body;
 
     try {
+        const userAlreadyExist = await User.doesEmailAlreadyExist(email);
+        if (userAlreadyExist) {
+            return res.status(400).json({
+                message: "User already exist!"
+            });
+        }
+
         const hashedPassword = await bcypt.hash(password, 10);
 
         const user = await User.create({
